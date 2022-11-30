@@ -1,17 +1,8 @@
 class Video < ApplicationRecord
   scope :by_name, -> { order(:name) }
 
-  def self.search(search)
-    if search
-      video_tag = Video.find_by(tags: search)
-      if video_tag
-        self.where(video_id: video_tag)
-      else
-        @videos = Video.all
-      end
-    else
-      @videos = Video.all
-    end
+  def self.send_chain(methods)
+    methods.inject(self) { |result, method| result.send(*method) }
   end
 
   def self.by_tag(tag)
