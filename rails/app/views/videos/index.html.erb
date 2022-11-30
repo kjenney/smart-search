@@ -1,0 +1,18 @@
+<h1>Videos</h1>
+
+
+<%= link_to 'Home', root_path %>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Length</th>
+  </tr>
+
+  <% @videos.each do |video| %>
+    <tr>
+      <td><%= link_to video.name, video_path(video) %></td>
+      <td><%= video.length %></td>
+    </tr>
+  <% end %>
+</table>

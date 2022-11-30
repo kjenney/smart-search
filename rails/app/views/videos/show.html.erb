@@ -1,0 +1,37 @@
+<h1>Video</h1>
+
+<%= link_to 'Back', videos_path %>
+
+<p>
+  <strong>Name:</strong>
+  <%= link_to @video.name, @video.uri %>
+</p>
+
+<p>
+  <strong>Length:</strong>
+  <%= @video.length %> seconds
+</p>
+
+<p>
+  <img src=<%= @video.image_uri %>></image>
+</p>
+
+<p>
+  <strong>Tags:</strong>
+  <%= @video.tags %>
+</p>
+
+<p>
+  <strong>Actor:</strong>
+  <%= @video.actor %>
+</p>
+
+<p>
+  <strong>Category:</strong>
+  <%= @video.category %>
+</p>
+
+<p>
+  <strong>Mode:</strong>
+  <%= @video.mode %>
+</p>
