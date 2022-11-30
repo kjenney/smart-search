@@ -7,7 +7,7 @@ class Video < ApplicationRecord
 
   def self.by_tag(tag)
     if tag.starts_with?('not')
-      tag = tag.slice! "not"
+      tag.slice! "not"
       where.not("lower(tags) LIKE ?", "%#{tag.downcase}%")
     else
       where("lower(tags) LIKE ?", "%#{tag.downcase}%")

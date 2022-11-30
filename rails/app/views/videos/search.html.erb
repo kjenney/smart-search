@@ -9,6 +9,7 @@
 
 <% else %>
 
+<h2><%= @videos.count %></h2>
 <table>
   <% @videos.each_slice(4) do |videos| %>
     <tr>
